@@ -100,6 +100,7 @@ Termination: The simulation runs until it fetches the instruction 0xFFFFFFFF, wh
 Statistics: Upon completion, it generates and displays key performance statistics, including total cycles, CPI, hazards encountered, and branch prediction accuracy.
 
 🧑‍💻 Development Team
+
 Aditya Yadav (2022MEB1291)
 
 Dhruv Agarwal (2022MEB1306)
