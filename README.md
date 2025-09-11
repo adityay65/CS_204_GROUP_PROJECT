@@ -1,7 +1,9 @@
 RISC-V Functional Simulator
+
 This project is a functional simulator for a subset of the RISC-V instruction set architecture. It models both a simple non-pipelined, single-cycle processor and a more complex 5-stage pipelined processor with hazard detection and resolution.
 
 ✨ Key Features
+
 Dual Execution Modes: Supports both non-pipelined (single-cycle) and 5-stage pipelined execution.
 
 Hazard Handling: Implements data forwarding and stalling mechanisms to resolve data hazards in the pipelined model.
@@ -13,6 +15,7 @@ Detailed Tracing: Offers extensive debugging capabilities, including cycle-by-cy
 Runtime Configuration: Allows users to interactively enable or disable features like pipelining, forwarding, and tracing at the start of the simulation.
 
 🏛️ Architectural Design
+
 The simulator models the classic 5-stage RISC pipeline and includes several key architectural components.
 
 Pipeline Structure
@@ -22,6 +25,7 @@ graph LR
     FETCH --> DECODE --> EXECUTE --> MEM --> WRITEBACK
 
 Core Components
+
 5 Pipeline Stages: Fetch, Decode, Execute, Memory Access, and Write Back.
 
 Forwarding Unit: Resolves data hazards by forwarding results from later stages to earlier stages, minimizing stalls.
@@ -31,15 +35,18 @@ Branch Target Buffer (BTB): A cache that stores the target addresses of taken br
 Memory Subsystem: Supports byte, half-word, and word memory accesses (lb, lh, lw, sb, sh, sw).
 
 🚀 Getting Started
+
 Follow these instructions to compile and run the simulator.
 
 Compilation
 You can compile the simulator in either non-pipelined or pipelined mode.
 
 Non-Pipelined Version
+
 g++ main.cpp alu_unit.cpp control_unit.cpp dec2bin.cpp global_variables.cpp immediate.cpp memory_read_write_funcs.cpp myRISCVSim.cpp registerfile.cpp -o output.exe
 
 Pipelined Version (includes forwarding and branch prediction)
+
 g++ main.cpp alu_unit.cpp BTB_operations.cpp control_unit.cpp forwarding_unit.cpp dec2bin.cpp global_variables.cpp immediate.cpp memory_read_write_funcs.cpp myRISCVSim.cpp registerfile.cpp -o output.exe
 
 Execution
@@ -52,6 +59,7 @@ Example:
 ./output.exe ../test/bubble_sort.mc
 
 ⚙️ Runtime Configuration
+
 Before the simulation begins, you will be prompted to configure the following settings interactively:
 
 Pipeline Mode:
@@ -89,6 +97,7 @@ Branch Prediction Unit (BPU) Debugging:
 1: Print the BPU state (PC, PHT, BTP) each cycle
 
 💻 Simulation Flow
+
 Initialization: The instruction and data memories are initialized from the input machine code (.mc) file.
 
 Configuration: The user sets the desired simulation parameters through interactive prompts.
